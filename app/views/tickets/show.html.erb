@@ -1,7 +1,7 @@
 <div id='ticket'>
 	<h2><%= @ticket.title %></h2>
 	<%= simple_format(@ticket.description) %>
-
+<br><small> <%= "Created by #{@ticket.user.email}" unless @ticket.user.nil? %></small>
 </div>
 
 <%= link_to 'Edit', edit_project_ticket_path(@project, @ticket)  %>

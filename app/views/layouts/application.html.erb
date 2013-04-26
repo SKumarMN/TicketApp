@@ -13,7 +13,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Home", root_url  %>
+  <nav>
+    <%= link_to "Home", root_url  %>
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>
+    <% else %>
+      <%= link_to 'Sign in ', new_user_session_path  %>
+      <%= link_to 'Sign_up', new_user_registration_path %>
+    <% end %>
+    <%= admins_only do %>
+    <%= link_to "Admin", admin_root_path  %>
+    <% end %>
+    
+  </nav>
+  
 <% flash.each do |key, value| %>
 	<div class='flash' id= '<%=key %>'>
 		<%= value %>
