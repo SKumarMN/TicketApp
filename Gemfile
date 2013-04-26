@@ -28,6 +28,11 @@ group :test, :development do
 
 end
 
+group :development do
+  gem 'awesome_print'
+  gem 'better_errors'
+end
+
 group :test do
 
 	gem 'cucumber-rails'

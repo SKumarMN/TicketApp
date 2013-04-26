@@ -4,4 +4,6 @@
 <br/>
 <%= link_to "Edit Project", edit_project_path(@project)   %>
 <%= link_to "Delete Project", @project, confirm: "Are you sure?", method: :delete   %>
+<%= link_to "View Tickets",  project_tickets_path(@project)%>
+<%= link_to "New Ticket", new_project_ticket_path(@project)  %>
 

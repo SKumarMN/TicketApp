@@ -1,0 +1,13 @@
+<h2><%= @project.name %> Tickets</h2>
+
+<ul>
+	<% @project.tickets.each do |ticket| %>
+		<li><%= link_to ticket.title , project_ticket_path(@project, ticket) %></li>
+	<% end %>
+</ul>
+
+<br/>
+
+<%= link_to 'back', project_path(@project)  %>
+
+
